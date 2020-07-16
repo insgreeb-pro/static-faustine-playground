@@ -8,20 +8,26 @@ ul {
   list-style: none;
 }
 
-/* sidebar */
 .sidebar {
   /* Display */
+  display: flex;
   position: fixed;
   height: 100vh;
-  left: 0px;
   width: 80px;
+  left: 0px;
   overflow: visible;
   background-color: aquamarine;
+  overflow: hidden;
+  /* animation */
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  -o-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
 }
 
 .sidebar ul {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   align-content: flex-start;
 }
 
@@ -31,24 +37,17 @@ ul {
 }
 
 .sidebar ul > li > span {
-  -webkit-transition: width 0.2s ease-in-out;
-  -moz-transition: width 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out;
-  transition: width 0.2s ease-in-out;
   display: inline-block;
-  visibility: hidden;
   align-self: center;
-  width: 0px;
+  padding: 10px 20px;
 }
 
 .logo {
   height: 80px;
   width: 80px;
 }
-.sidebar ul > li:hover span {
-  width: 200px;
-  visibility: visible;
-  background-color: teal;
+.sidebar:hover {
+  width: 300px;
 }
 .sidebar ul > li:hover {
   background-color: teal;
